@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_navy">
+
+    <!-- Center Brand Container -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- Logo Icon with White Outer & Coral Accent in Navy Container -->
+        <FrameLayout
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:background="@drawable/bg_badge_emergency">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_shield_alert"
+                app:tint="@color/emergency_red"
+                android:contentDescription="@string/app_name" />
+        </FrameLayout>
+
+        <!-- App Brand Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:letterSpacing="0.04"
+            android:layout_marginTop="20dp" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Women\'s Personal Safety &amp; Emergency Alert"
+            android:textSize="13sp"
+            android:textColor="@color/text_muted"
+            android:layout_marginTop="6dp" />
+
+        <!-- Progress Spinner -->
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:indicatorSize="28dp"
+            app:trackThickness="3dp"
+            app:indicatorColor="@color/emergency_red"
+            app:trackColor="@color/slate_border"
+            android:layout_marginTop="36dp" />
+    </LinearLayout>
+
+    <!-- Bottom Security Tag -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="32dp">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_check"
+            app:tint="@color/status_active_green"
+            android:contentDescription="Verified" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SECURE OFFLINE-READY ASSISTANCE"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_muted"
+            android:letterSpacing="0.06"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,102 @@
+<resources>
+    <string name="app_name">SheSecure</string>
+    <string name="tagline">Personal Safety &amp; Emergency Alert System</string>
+
+    <!-- Disclaimer -->
+    <string name="safety_disclaimer_title">Emergency Assistance Notice</string>
+    <string name="safety_disclaimer_text">SheSecure is an assistance companion designed to alert your personal trusted contacts. It is not a replacement for official emergency services (such as 911, 112, or local police). Transmission of SMS and GPS availability depend on device hardware, cellular service, and carrier networks.</string>
+
+    <!-- Welcome / Auth -->
+    <string name="welcome_heading">Your personal safety network, always ready.</string>
+    <string name="welcome_subheading">Quickly alert trusted contacts with your location during an emergency with one touch or a deliberate shake.</string>
+    <string name="btn_get_started">Get Started</string>
+    <string name="btn_login_existing">I already have an account</string>
+    <string name="title_login">Welcome Back</string>
+    <string name="title_signup">Create Your Account</string>
+    <string name="title_forgot_password">Reset Password</string>
+    <string name="label_display_name">Full Name</string>
+    <string name="label_email">Email Address</string>
+    <string name="label_user_phone">Mobile Number</string>
+    <string name="hint_user_phone">9876543210</string>
+    <string name="label_password">Password</string>
+    <string name="label_confirm_password">Confirm Password</string>
+    <string name="btn_login">Sign In</string>
+    <string name="btn_signup">Register Account</string>
+    <string name="btn_reset_password">Send Reset Link</string>
+    <string name="link_forgot_password">Forgot password?</string>
+    <string name="link_signup">Don\'t have an account? Sign up</string>
+    <string name="link_login">Already have an account? Sign in</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_greeting">Hello, %1$s</string>
+    <string name="sos_button_label">SOS</string>
+    <string name="sos_button_hint">Press and hold for 2.5s to trigger alert</string>
+    <string name="safety_status_title">Safety Status</string>
+    <string name="status_protected">Protected</string>
+    <string name="status_attention_needed">Attention Required</string>
+    <string name="status_contacts_configured">%1$d of 5 contacts added</string>
+    <string name="shake_detection_active">Shake detection active</string>
+    <string name="shake_detection_inactive">Shake detection disabled</string>
+    <string name="action_manage_contacts">Emergency Contacts</string>
+    <string name="action_manage_contacts_desc">View and edit your 5 trusted contacts</string>
+    <string name="action_detection_settings">Shake &amp; Sensors</string>
+    <string name="action_detection_settings_desc">Configure sensitivity and triggers</string>
+    <string name="action_permission_guidance">Permissions</string>
+    <string name="action_permission_guidance_desc">Check SMS, Location, and Sensors</string>
+
+    <!-- Contacts -->
+    <string name="title_contacts">Trusted Contacts</string>
+    <string name="contacts_limit_notice">You can save up to 5 emergency contacts.</string>
+    <string name="contacts_empty_heading">No Emergency Contacts Yet</string>
+    <string name="contacts_empty_subheading">Add at least one trusted person who will receive an emergency SMS with your location when SOS is triggered.</string>
+    <string name="btn_add_contact">Add Trusted Contact</string>
+    <string name="title_add_contact">Add Emergency Contact</string>
+    <string name="title_edit_contact">Edit Emergency Contact</string>
+    <string name="label_contact_name">Contact Name</string>
+    <string name="label_phone_number">Phone Number (with country code)</string>
+    <string name="hint_phone_number">+1 555 123 4567</string>
+    <string name="btn_save_contact">Save Contact</string>
+    <string name="btn_delete_contact">Remove Contact</string>
+    <string name="confirm_delete_contact">Are you sure you want to remove %1$s from your emergency contacts?</string>
+
+    <!-- SOS Countdown & Alert -->
+    <string name="countdown_title">REAL EMERGENCY SOS ACTIVATING</string>
+    <string name="countdown_subtitle">An emergency SMS with your live GPS location will be automatically sent to all saved emergency contacts in:</string>
+    <string name="btn_cancel_sos">CANCEL ALERT</string>
+    <string name="alert_sending_title">Alert in Progress</string>
+    <string name="alert_status_acquiring_location">Acquiring GPS coordinates…</string>
+    <string name="alert_status_sending_sms">Dispatching emergency SMS messages…</string>
+    <string name="alert_status_completed">Alert Trigger Process Completed</string>
+    <string name="btn_open_sms_fallback">Open in Messaging App (Fallback)</string>
+    <string name="btn_return_dashboard">Return to Dashboard</string>
+
+    <!-- Settings & Profile -->
+    <string name="title_settings">Settings</string>
+    <string name="setting_shake_title">Shake to Trigger Alert</string>
+    <string name="setting_shake_summary">Trigger the emergency countdown by deliberately shaking your phone</string>
+    <string name="setting_sensitivity_title">Shake Sensitivity</string>
+    <string name="setting_sensitivity_low">Low (Heavy shake)</string>
+    <string name="setting_sensitivity_medium">Medium (Standard)</string>
+    <string name="setting_sensitivity_high">High (Light shake)</string>
+    <string name="title_profile">Your Profile</string>
+    <string name="btn_logout">Log Out</string>
+    <string name="btn_save_profile">Update Name</string>
+    <string name="title_privacy_policy">Privacy &amp; Data Security</string>
+
+    <!-- Widget & Fast Access -->
+    <string name="widget_title">SheSecure SOS</string>
+    <string name="widget_description">Quick-access home-screen emergency SOS button with a 5-second countdown safeguard.</string>
+    <string name="widget_status_ready">Protected (%1$d contacts)</string>
+    <string name="widget_status_unconfigured">Setup Required</string>
+    <string name="widget_status_signed_out">Sign In Required</string>
+    <string name="widget_subtext_ready">Tap for 5s cancellable alert</string>
+    <string name="widget_subtext_unconfigured">Tap to add trusted contacts</string>
+    <string name="widget_subtext_signed_out">Tap to sign in to SheSecure</string>
+
+    <!-- Lock Screen Access -->
+    <string name="lockscreen_notification_channel_name">Emergency Fast Access</string>
+    <string name="lockscreen_notification_channel_desc">Shows a secure, discreet emergency fast-access notification on your lock screen.</string>
+    <string name="lockscreen_notification_title">SheSecure Fast Access</string>
+    <string name="lockscreen_notification_text">Emergency alert ready. Tap to trigger SOS.</string>
+    <string name="lockscreen_action_trigger_sos">TRIGGER SOS</string>
+</resources>

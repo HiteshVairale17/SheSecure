@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/background_neutral">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Top Header Bar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/surface_card"
+            android:elevation="1dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="10dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/primary_navy"
+                android:contentDescription="Back"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SheSecure App Guide"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_navy"
+                android:layout_toEndOf="@id/btn_back"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Section 1: Home-Screen Widget -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Adding the Home-Screen SOS Widget"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_navy"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.SheSecure.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• Step 1: Go to your device Home Screen and long-press on any empty space.\n• Step 2: Tap 'Widgets' from the menu.\n• Step 3: Scroll or search for 'SheSecure'.\n• Step 4: Touch and hold the 'SheSecure SOS' widget, then drag it to your desired home screen location.\n\nNote: Exact menu names may vary slightly across Samsung One UI, Google Pixel, Xiaomi, and OnePlus launchers."
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="4dp"
+                        android:textColor="@color/text_secondary" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/card_border"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_pin_widget"
+                        style="@style/Widget.SheSecure.Button.Primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Pin SOS Widget to Home Screen"
+                        android:textColor="@color/white"
+                        app:icon="@drawable/ic_shield_check"
+                        app:iconTint="@color/white"
+                        app:iconGravity="textStart" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Section 2: Lock-Screen Fast Access -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. Lock-Screen Fast Access"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_navy"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.SheSecure.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Modern Android restricts third-party lock-screen widgets. SheSecure provides a secure, high-priority Fast Access Notification that stays accessible on your lock screen.\n\n• Enabling: Go to SheSecure Settings → Enable 'Lock-Screen Fast Access'.\n• Privacy Protection: The notification never reveals your emergency contacts, names, or GPS coordinates on the lock screen.\n• Triggering: Tap 'TRIGGER SOS' on the lock screen notification to launch the emergency countdown directly without unlocking your device.\n• Lock-Screen Settings: Ensure your device allows sensitive notifications or lock-screen notifications (Settings → Notifications → Notifications on lock screen → Show)."
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="4dp"
+                        android:textColor="@color/text_secondary" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Section 3: Safe Testing Protocol -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. Safe Testing (Without Real Alarms)"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_navy"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.SheSecure.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="You can practice and verify the emergency flow safely:\n\n1. Hold the in-app SOS button (2.5s) or tap the Home Screen Widget.\n2. Observe the 5-second countdown timer and feel the vibration pulses.\n3. Tap 'CANCEL ALERT' before the countdown hits 0.\n4. A confirmation toast will indicate the alert was safely aborted.\n\nNo SMS messages or carrier transmissions are initiated until the 5-second countdown expires."
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="4dp"
+                        android:textColor="@color/text_secondary" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Section 4: Permissions & Troubleshooting -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. Troubleshooting &amp; Permissions"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_navy"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.SheSecure.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• Widget shows 'Sign In Required': Open SheSecure and log in.\n• Widget shows 'Setup Required': Open Emergency Contacts and add at least 1 contact.\n• SMS Permission Denied: SheSecure automatically offers a one-tap fallback to your system messaging app.\n• GPS Unavailable: Alerts are sent immediately without coordinates so help is not delayed.\n• Battery Optimization: On some phones (e.g., Samsung, Xiaomi), exclude SheSecure from 'Battery Optimization' to keep shake detection active during walks.\n\nDisclaimer: SheSecure is an assistance companion. Delivery of SMS and GPS depends on carrier networks and device hardware. It is not a replacement for official 911 / emergency services."
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="4dp"
+                        android:textColor="@color/text_secondary" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

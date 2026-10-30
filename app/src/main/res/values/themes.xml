@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SheSecure" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand colors -->
+        <item name="colorPrimary">@color/primary_navy</item>
+        <item name="colorPrimaryDark">@color/primary_navy_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <!-- Background and Surface -->
+        <item name="android:windowBackground">@color/background_neutral</item>
+        <item name="colorSurface">@color/surface_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+
+        <!-- Status & System Bars -->
+        <item name="android:statusBarColor">@color/background_neutral</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/background_neutral</item>
+        <item name="android:windowLightNavigationBar">true</item>
+
+        <!-- Default text color -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+
+    <!-- Legacy alias to prevent any missing theme breakages -->
+    <style name="Theme.MyApplication" parent="Theme.SheSecure" />
+</resources>

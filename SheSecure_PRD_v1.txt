@@ -1,0 +1,147 @@
+Product: SheSecure
+Category: Women’s personal safety and emergency assistance
+Platform: Native Android application
+Primary technology: Java, XML, Android Studio
+Backend: Supabase Auth and PostgreSQL
+Version: MVP 1.0
+
+Core concept: A user can register, manage trusted emergency contacts, and trigger an emergency alert manually through an SOS button or automatically through a configured shake gesture. The application attempts to obtain the user's current location and send an emergency SMS to the user's saved contacts.
+
+1. Product vision
+SheSecure aims to provide a simple, dependable, and accessible personal safety tool that enables users to alert trusted people when they feel unsafe or need urgent assistance.
+The app should minimize the steps required to trigger an alert, make emergency contacts easy to manage, and offer a polished, professional experience.
+SheSecure is an assistance tool, not a replacement for emergency services. Delivery of SMS messages, availability of GPS location, and successful alert transmission cannot be guaranteed.
+
+2. Problem statement
+During an emergency, a person may not have enough time to unlock their phone, open a messaging application, find a trusted contact, type a message, and share their location.
+SheSecure addresses this problem through:
+- A dedicated, easily accessible SOS button.
+- Configurable shake-to-trigger functionality.
+- A predefined list of trusted emergency contacts.
+- Automatic preparation of an emergency message containing location details when available.
+- A persistent account and cloud-backed contact management system.
+
+3. Target users
+- Women who want a convenient way to notify trusted contacts.
+- Students, commuters, working professionals, and people travelling alone.
+- Users who need a straightforward personal safety application.
+The application should also support users who are not technically experienced.
+
+4. Product goals
+1. Provide reliable, understandable emergency-triggering behavior.
+2. Allow users to manage emergency contacts at any time.
+3. Keep user accounts and contact data synchronized through Supabase.
+4. Preserve login sessions across application restarts.
+5. Keep emergency actions as independent as practical from internet availability.
+6. Deliver a consistent, professional Android UI.
+7. Handle permissions, failures, and accessibility explicitly.
+
+Non-goals for MVP 1.0:
+- Live tracking of users by other people.
+- An emergency-response control centre.
+- AI-based danger detection.
+- A public social network or community feed.
+- Payment systems or advertisements.
+- Guaranteed SMS delivery or guaranteed background operation.
+
+5. Functional requirements
+FR-01: Onboarding and authentication
+- Provide welcome, signup, login, and logout screens.
+- Support email/password authentication through Supabase Auth.
+- Include input validation, password visibility, loading indicators, and clear error messages.
+- Persist authentication sessions securely and restore the correct screen when the app reopens.
+- Provide password reset functionality.
+- Prevent unauthenticated users from accessing protected account screens.
+- Do not require users to sign in again every time they launch the app unless their session has expired or been revoked.
+
+FR-02: User profile
+- Allow users to view and update their display name.
+- Show account information and logout controls.
+- Store the profile against the authenticated Supabase user ID.
+- Avoid collecting unnecessary personal information.
+
+FR-03: Emergency contacts
+- Allow users to add a contact by entering a name and phone number.
+- Validate phone-number input and support the appropriate country code.
+- Allow contacts to be edited and deleted.
+- Display the saved contacts in a clearly organized list.
+- Set a configurable limit, initially five contacts.
+- Prevent duplicate entries where appropriate.
+- Provide helpful empty states when no contacts have been added.
+- Synchronize contact changes with Supabase when connectivity is available.
+- Make the locally available emergency contacts accessible to the emergency workflow without waiting for a cloud request.
+- The app should explain that a valid phone number and SMS-capable service are required for text-message alerts.
+
+FR-04: Manual SOS
+- Display a prominent SOS control on the main dashboard.
+- Require an intentional activation gesture, such as pressing and holding the button, to reduce accidental triggers.
+- Show a clear confirmation or countdown that the user can cancel.
+- On confirmation, initiate the emergency workflow.
+- Obtain a recent location if permission and device services allow.
+- Generate a concise emergency message with a location link when available.
+- Attempt to send the alert to each saved emergency contact.
+- Report success, partial success, or failure accurately where the platform exposes that information.
+- Do not show a successful delivery status merely because an SMS send operation was initiated.
+
+FR-05: Shake-to-trigger
+- Provide a setting to enable or disable shake detection.
+- Allow the sensitivity threshold to be configured through a simple setting.
+- Detect deliberate shaking through Android sensor APIs.
+- Use thresholding, cooldowns, and duplicate-trigger protection to reduce accidental activations.
+- Route a valid shake event through the same emergency workflow as manual SOS.
+- Provide a way to cancel an accidental trigger.
+- Explain when shake detection is active and its limitations.
+
+FR-06: Location
+- Request location permission only when it is relevant to the feature.
+- Explain why location is needed before requesting access.
+- Obtain the best available recent location within a defined timeout.
+- Include a Google Maps-compatible location link when coordinates are available.
+- If location retrieval fails, still attempt the emergency message without coordinates.
+- Display clear feedback if location services are disabled or permission is denied.
+- Avoid continuous location collection in MVP 1.0.
+
+FR-07: SMS alert handling
+The alert should contain:
+- A short emergency notification.
+- The user's name or chosen identifier, where available.
+- Coordinates or a map link when available.
+- A brief instruction to contact the user or seek appropriate help.
+- Direct SMS handling with graceful fallback to system SMS composer where direct SMS is unavailable or permissions are restricted.
+
+FR-08: Dashboard
+- Personalized greeting.
+- Clearly visible SOS action.
+- Compact safety-status area.
+- Emergency-contact summary.
+- Quick access to manage contacts.
+- Shake detection status and settings.
+- Access to profile and app settings.
+
+FR-09: Settings
+- Shake detection enable/disable.
+- Shake sensitivity setting.
+- Emergency contact management link.
+- Permission status and instructions.
+- Profile and logout.
+- Privacy policy and safety disclaimer.
+- App version and basic troubleshooting.
+
+FR-10: Error and offline handling
+- Show useful loading, empty, error, and retry states.
+- Keep locally available contacts usable during temporary network outages.
+- Queue or synchronize ordinary data changes when appropriate.
+- Do not delay the emergency workflow while waiting for Supabase.
+- Clearly distinguish an attempted alert from a confirmed delivery.
+- Handle missing location, missing contacts, denied permissions, and SMS failures.
+
+6. UI/UX and visual design requirements
+- Calm, reassuring, professional, and discreet.
+- Controlled palette: deep navy/charcoal for structure, warm off-white for light surfaces, restrained red/coral for emergency actions.
+- Neutral, legible sans-serif typography, 8dp/4dp spacing grid.
+- No random gradients, excessive glassmorphism, decorative charts, fake safety scores, or non-functional placeholder buttons.
+
+7. Database requirements
+- profiles: id (UUID linked to auth.users.id), display_name (text), created_at, updated_at
+- emergency_contacts: id (UUID PK), user_id (UUID references auth.users.id), contact_name (text), phone_number (text), created_at, updated_at
+- RLS enabled on both tables enforcing auth.uid() ownership.

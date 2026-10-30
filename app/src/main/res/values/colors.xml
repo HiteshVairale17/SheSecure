@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SheSecure Core Theme Colors -->
+    <color name="primary_navy">#0F172A</color>
+    <color name="primary_navy_dark">#020617</color>
+    <color name="slate_surface">#1E293B</color>
+    <color name="slate_border">#334155</color>
+    
+    <!-- Backgrounds & Surfaces -->
+    <color name="background_neutral">#F8FAFC</color>
+    <color name="surface_card">#FFFFFF</color>
+    <color name="surface_neutral">#F1F5F9</color>
+    <color name="card_border">#E2E8F0</color>
+
+    <!-- Typography Colors -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#475569</color>
+    <color name="text_muted">#94A3B8</color>
+    <color name="text_on_dark">#FFFFFF</color>
+
+    <!-- Emergency Actions -->
+    <color name="emergency_red">#DC2626</color>
+    <color name="emergency_red_dark">#B91C1C</color>
+    <color name="emergency_red_pressed">#991B1B</color>
+    <color name="emergency_tint">#FEE2E2</color>
+
+    <!-- Status Indicators -->
+    <color name="status_active_green">#059669</color>
+    <color name="status_active_tint">#D1FAE5</color>
+    <color name="status_warning_amber">#D97706</color>
+    <color name="status_warning_tint">#FEF3C7</color>
+    <color name="status_error_tint">#FEE2E2</color>
+
+    <!-- Basic Android constants -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+</resources>

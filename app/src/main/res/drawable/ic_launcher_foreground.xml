@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Outer Shield Border / Body in Clean White -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,24 L30,34 C30,58 40.5,73 54,84 C67.5,73 78,58 78,34 Z" />
+
+    <!-- Inner Shield Surface in Navy Accent -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M54,29 L35,37 C35,56 43.5,69 54,78 C64.5,69 73,56 73,37 Z" />
+
+    <!-- Center Emergency Beacon Cross / Alert Symbol in Emergency Coral Red -->
+    <path
+        android:fillColor="#DC2626"
+        android:pathData="M51,40 h6 v8 h8 v6 h-8 v8 h-6 v-8 h-8 v-6 h8 Z" />
+
+    <!-- Emergency Beacon Top Indicator Dot -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:pathData="M54,34 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0" />
+</vector>

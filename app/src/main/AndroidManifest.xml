@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SheSecure">
+
+        <!-- Launcher: SheSecure Splash & Session Restoration -->
+        <activity
+            android:name="com.example.shesecure.auth.SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.shesecure.dashboard.DashboardActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+
+        <!-- Auth & Onboarding Activities -->
+        <activity
+            android:name="com.example.shesecure.auth.WelcomeActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.example.shesecure.auth.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_login" />
+
+        <activity
+            android:name="com.example.shesecure.auth.SignupActivity"
+            android:exported="false"
+            android:label="@string/title_signup" />
+
+        <!-- Emergency Contacts Management -->
+        <activity
+            android:name="com.example.shesecure.contacts.EmergencyContactsActivity"
+            android:exported="false"
+            android:label="@string/title_contacts" />
+
+        <activity
+            android:name="com.example.shesecure.contacts.AddEditContactActivity"
+            android:exported="false"
+            android:label="@string/title_contacts" />
+
+        <!-- Emergency Alert Workflow Activities -->
+        <activity
+            android:name="com.example.shesecure.emergency.SosCountdownActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SheSecure" />
+
+        <activity
+            android:name="com.example.shesecure.emergency.AlertStatusActivity"
+            android:exported="false"
+            android:label="@string/alert_sending_title" />
+
+        <!-- Settings & Guidance -->
+        <activity
+            android:name="com.example.shesecure.settings.SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_settings" />
+
+        <activity
+            android:name="com.example.shesecure.settings.PermissionGuidanceActivity"
+            android:exported="false"
+            android:label="Permissions" />
+
+        <activity
+            android:name="com.example.shesecure.settings.AppGuideActivity"
+            android:exported="false"
+            android:label="SheSecure App Guide" />
+
+        <activity
+            android:name="com.example.shesecure.profile.ProfileActivity"
+            android:exported="false"
+            android:label="@string/title_profile" />
+
+        <!-- Native Home-Screen App Widget Provider -->
+        <receiver
+            android:name="com.example.shesecure.widget.SheSecureWidgetProvider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_sos_info" />
+        </receiver>
+    </application>
+
+</manifest>

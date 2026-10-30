@@ -1,0 +1,6 @@
+{
+  "name": "SheSecure",
+  "description": "Women's personal safety app with SOS alerts, shake detection, contact management, and location sharing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

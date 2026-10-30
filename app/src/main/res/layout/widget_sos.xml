@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_widget_container"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="8dp">
+
+    <!-- Top Header Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="6dp">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_shield_alert"
+            android:contentDescription="@string/widget_title" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/widget_title"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginStart="6dp" />
+
+        <TextView
+            android:id="@+id/tv_widget_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ready"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@color/status_active_green" />
+    </LinearLayout>
+
+    <!-- Prominent SOS Button Target -->
+    <FrameLayout
+        android:id="@+id/btn_widget_sos"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:background="@drawable/bg_sos_button">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/sos_button_label"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:letterSpacing="0.05" />
+    </FrameLayout>
+
+    <!-- Subtext / Instructions -->
+    <TextView
+        android:id="@+id/tv_widget_subtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/widget_subtext_ready"
+        android:textSize="10sp"
+        android:textColor="@color/text_muted"
+        android:layout_marginTop="6dp"
+        android:textAlignment="center"
+        android:maxLines="1"
+        android:ellipsize="end" />
+</LinearLayout>
